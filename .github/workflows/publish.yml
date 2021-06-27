@@ -85,6 +85,8 @@ jobs:
     needs: npm
     runs-on: ubuntu-latest
     steps:
+      - name: Wait 5 minutes to allow PDFs to generate
+        run: sleep 5m
       - name: Trigger simple-icons-website update
         run: |
           curl -X POST \
